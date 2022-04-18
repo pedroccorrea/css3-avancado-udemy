@@ -35,6 +35,7 @@
         div#janela1, div#janela2 {
             width: 150px;
             height: 150px;
+            cursor: pointer;
             position: absolute;
         }
 
@@ -46,6 +47,17 @@
         div#janela2 {
             left: 180px;
             background-color: red;
+        }
+
+        div#janela1:hover {
+            transition: all 0.5s ease-out;
+            width: 400px;
+        }
+
+        div#janela1:hover + div#janela2 {
+            transition: all 0.5s ease-out;
+            transform: rotate(90deg);
+            left: 580px;
         }
 
         footer {
