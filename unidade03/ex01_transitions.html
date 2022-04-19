@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso de CSS - Transitions</title>
     <style>
-        *{
+        body {
             margin: 0;
             padding: 0;
         }
@@ -20,36 +20,131 @@
             height: 92px;
             margin-right: auto;
             margin-left: auto;
-            background-color: #1C0501;
+            background-color: #1F0C05;
             background-image: url("../_img/topo.jpg");
             background-position: center;
             background-repeat: no-repeat;
         }
 
-        main {
+        #janela {
             width: 860px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .thumb {
+            height: 500px;
             margin-top: 30px;
-            display: inline-block;
+            margin-right: auto;
+            margin-left: auto;
         }
 
-        .thumb img {
-            width: 200px;
-            border: 20px black;
+        .palestrante {
+            position: relative;
+            float:left;
+            width: 256px;
+            height: 256px;
+            border: 5px solid white;
+            background-color: #1A1A1A;
+            box-shadow:2px 2px 2px #333;
+            margin: 0 20px 50px 0;
+        }
+
+        .foto {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 256px;
+            height: 256px;
+            z-index: 1;
+            /*clip:rect(0 256px 256px 0);*/
+            clip-path: inset(0);
+        }
+
+        .texto {
+            position: absolute;
+            top: 220px;
+            left: 0;
+            width: 246px;
+            height: 256px;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            padding: 5px;
+            
+            cursor: pointer;
+
+            transition: all 0.5s ease-out;
+        }
+
+        .texto:hover {
+            top: 100px;
+        }
+
+        h3 {
+            font-family: 'PT Mono', sans-serif;
+            font-size: 18px;
+            color: #008B9C;
+            letter-spacing: -0.1em;
+            margin: 0;
+            opacity: 0.7;
+        }
+
+        p {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: white;
+            line-height: 150%;
+        }
+
+        .azul {
+            color: #008B9C;	
         }
     </style>
 </head>
 <body>
     <header></header>
     <main>
-        <section class="thumb">
-            <img src="images/personagem1.jpg" alt="Foto ilustrativa">
-            <img src="images/personagem2.jpg" alt="Foto ilustrativa">
-            <img src="images/personagem3.jpg" alt="Foto ilustrativa">
+        <section id="janela">
+            <div class="palestrante">
+                <div class="foto">
+                    <img src="images/personagem1.jpg" alt="Foto ilustrativa">
+
+                    <div class="texto">
+                        <h3>William Lemos</h3>
+                        <p>
+                            Mestre em Gastronomia pela facultade UFRS com a especialidade em carnes. Lidera equipe do Tomo 1 na Argentina.
+                            <br>
+                            <span class="azul">@williammedia</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="palestrante">
+                <div class="foto">
+                    <img src="images/personagem2.jpg" alt="Foto ilustrativa">
+
+                    <div class="texto">
+                        <h3>Patricia Souza</h3>
+                        <p>
+                            É coordenadora dos cursos de pós-graduação em Gastronomia de Sourbone - Paris e chefe do Hippopotamus.
+                            <br>
+                            <span class="azul">@patriciamedia</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="palestrante">
+                <div class="foto">
+                    <img src="images/personagem3.jpg" alt="Foto ilustrativa">
+                    <div class="texto">
+                        <h3>Tiago Henrique</h3>
+                        <p>
+                            Barista derenome, coordena o curso de intinerante em todo Brasil.
+                            Mestre em Gastronomia pela USP e Doutor em Harvard.
+                            <br>
+                            <span class="azul">@tiagomedia</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
 
         </section>
     </main>
