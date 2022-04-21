@@ -7,7 +7,8 @@ header {
 }
 
 aside {
-    float: left;
+    float: none;
+    margin: 0 auto;
 }
 
 aside img:nth-child(1) {
@@ -16,4 +17,14 @@ aside img:nth-child(1) {
 
 aside img:nth-child(2) {
     float: right;
+}
+
+@media (max-width: 735px) {
+    aside {
+        text-align: center;
+    }
+
+    aside img:nth-child(1), aside img:nth-child(2) {
+        float: none;
+    }
 }

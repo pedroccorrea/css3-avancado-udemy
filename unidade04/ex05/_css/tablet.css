@@ -20,6 +20,9 @@ aside img:nth-child(2) {
     float: right;
 }
 
+nav#menu_desktop {
+    display: none;
+}
 @media (max-width:695px) {
     aside {
         text-align: center;
