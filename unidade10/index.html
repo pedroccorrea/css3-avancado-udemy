@@ -158,26 +158,17 @@
     </body>
     <script src="_js/jquery.js"></script>
     <script>
-        // $('#menu-btn').click(function() {
-        //     $('#menu-mobile').toggle();
-        // })
+        $(function() {
+            $('#menu-btn').click(function() {
+                $('#menu-mobile').toggle();
+            })
 
-        function toggle() {
-            var eventos = arguments;
-            var count = -1;
-            return function() {
-                count = (count +1) % eventos.length;
-                eventos[count].apply(this, arguments);
-            }
-        }
-
-        document.getElementById("menu-btn")[count].onclick = toggle(
-                function() {
-                    document.getElementById('menu-mobile').style.display = "block";
-                },
-                function() {
-                    document.getElementById('menu-mobile').style.display = "none";
+            $(window).resize(function() {
+                var largura  = $(window).width();
+                if(largura >= 701) {
+                    $('#menu-mobile').hide();
                 }
-            )
+            })
+        })
     </script>
 </html>
